@@ -6,6 +6,8 @@ AddEventHandler('chatMessage', function(Source, Name, Msg)
     if string.find(args[1], "/") then
         local cmd = args[1]
         table.remove(args, 1)
+	else
+		TriggerClientEvent('chatMessage', -1, Name, { 255, 255, 255 }, Msg)
 	end
 end)
 
